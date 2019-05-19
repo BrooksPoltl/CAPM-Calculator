@@ -18,10 +18,10 @@ def capm_calculator(months,ticker):
     stock_data = stock_data.json()
     index_data = index_data.json()
 
-    #testing if limit is reached
+    #testing if api limit is reached
     if(('Note' in stock_data) or ('Note' in index_data)):
-        print("please wait api limit reached")
-        exit()
+        return{'error':"please wait api limit reached"}
+
 
     #variable declarations to push data into
     adjusted_stock_prices = []
