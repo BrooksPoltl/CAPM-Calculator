@@ -1,1 +1,1 @@
-web: gunicorn --chdir myapi wsgi.py:app
+web: gunicorn myapi.wsgi
