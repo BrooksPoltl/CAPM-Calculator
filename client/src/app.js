@@ -1,29 +1,12 @@
 import React,{useState} from 'react'
-
+import Form from './components/form'
 const App = () =>{
-    const [ticker, setTicker] = useState('')
-    const [months, setMonths] = useState('')
+    const [data, setData] = useState([])
+
     return(
         <div>
             <h1>CAPM Calculator App</h1>
-            <form>
-                <div>
-                    <p>Ticker:</p>
-                    <input onChange = {
-                        (event)=>{
-                            event.preventDefault();
-                            setTicker(event.target.value);
-                        }}value = {ticker}/>  
-                </div>
-                <div>
-                    <p>Months:</p>
-                    <input onChange ={(event)=>{
-                        event.preventDefault();
-                        setMonths(event.target.value);
-                    }}
-                    value = {months}/>  
-                </div>      
-            </form>
+            <Form />
         </div>
     )
 }
