@@ -11,6 +11,7 @@ numpy==1.16.3
 post==2019.4.13
 psycopg2==2.8.2
 public==2019.4.13
+python-dotenv==0.10.2
 pytz==2019.1
 query-string==2019.4.13
 request==2019.4.13

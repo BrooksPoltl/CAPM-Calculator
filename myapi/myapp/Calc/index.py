@@ -1,10 +1,12 @@
 from . import config
 import requests
 from scipy import stats
+import os
 import json
-
-key = config.ALPHA_API_KEY
-quandl_key = config.QUANDL_API_KEY
+from dotenv import load_dotenv
+load_dotenv()
+key = os.getenv("ALPHA_API_KEY")
+quandl_key = os.getenv("QUANDL_API_KEY")
 def capm_calculator(months,ticker):
     output = months
     change_index = 0
@@ -79,7 +81,7 @@ def capm_calculator(months,ticker):
     #Ke = Rf + b(Rm-Rf)
     CAPM = average_risk_free_rate + (slope*average_market_risk_premium)
 
-    data_dict = {'ticker': ticker, 'capm': CAPM, 'beta': slope, 'intecept':intercept, 'r_value':r_value, 'p_value':p_value, 'standard_error': std_err}
+    data_dict = {'ticker': ticker, 'capm': CAPM, 'beta': slope, 'intecept':intercept, 'r_value':r_value, 'p_value':p_value, 'standard_error': std_err, 'MRP':average_market_risk_premium}
     json.dumps(data_dict)
     print(CAPM)
     return data_dict
