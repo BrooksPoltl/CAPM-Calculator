@@ -1,4 +1,3 @@
-from . import config
 import requests
 from scipy import stats
 import os
