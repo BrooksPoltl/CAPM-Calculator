@@ -26,8 +26,8 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['capm-calculator.herokuapp.com',None]
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://capm-calculator.herokuapp.com']
+# ALLOWED_HOSTS = []
 
 # Application definition
 
