@@ -80,7 +80,7 @@ def capm_calculator(months,ticker):
     #Ke = Rf + b(Rm-Rf)
     CAPM = average_risk_free_rate + (slope*average_market_risk_premium)
 
-    data_dict = {'ticker': ticker, 'capm': CAPM, 'beta': slope, 'intecept':intercept, 'r_value':r_value, 'p_value':p_value, 'standard_error': std_err, 'MRP':average_market_risk_premium}
+    data_dict = {'rf': average_risk_free_rate, 'ticker': ticker, 'capm': CAPM, 'beta': slope, 'intercept':intercept, 'r_value':r_value, 'p_value':p_value, 'standard_error': std_err, 'MRP':average_market_risk_premium}
     json.dumps(data_dict)
     print(CAPM)
     return data_dict
