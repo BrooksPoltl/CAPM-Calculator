@@ -1,22 +1,20 @@
 import React,{useState} from 'react'
 import axios from 'axios'
 
-const Form = () =>{
-    const URL = 'http://localhost:8000/'
+const Form = (props) =>{
+    const URL = 'https://capm-calculator.herokuapp.com/'
     const [ticker, setTicker] = useState('')
     const [months, setMonths] = useState('')
-    const submitHandler = (event) =>{
+    const submitHandler = async(event) =>{
         event.preventDefault();
+        props.setLoading(true)
+        let response;
         if(ticker !== '' & months!== ''){
-            axios.get(`${URL}?TICKER=${ticker}&MONTHS=${months}`)
-            .then(response=>{
-                console.log(response);
-            })
-            .catch(err=>{
-                console.log(err);
-            })
+            response = await axios.get(`${URL}?TICKER=${ticker}&MONTHS=${months}`)
         }
-        
+        console.log(response)
+        props.setData(response.data)
+        props.setLoading(false)
     }
     return(
     <form onSubmit ={(event)=>submitHandler(event)}>
