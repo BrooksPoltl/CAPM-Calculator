@@ -1,7 +1,7 @@
 # CAPM-Calculator
 Calculator project to calculate Ke for S&amp;P 500 companies.
 
-##deployment URL
+## deployment URL
 https://gifted-tereshkova-7f35b7.netlify.com/
 
 Using the Alpha Vantage API to calculate the return on equity of S&P 500 companies. 
